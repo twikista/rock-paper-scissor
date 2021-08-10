@@ -1,6 +1,15 @@
 //create an array to hold the random selections of the computer
 
+const options = ['rock', 'paper', 'scissors'];
+
+
 //create a function that randomly generates the computer's selection
+
+function computerPlay(){ 
+    const randomNumber = Math.floor(Math.random()*3);
+    const randomOption = options[randomNumber];
+    return randomOption;
+}
 
 //create a function that determines the winner of each game round depending on player selection and computer selection
 
