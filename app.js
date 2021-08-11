@@ -13,6 +13,7 @@ function computerPlay() {
 //create a function that determines the winner of each game round depending on player selection and computer selection
 
 function playRound(playerSelection, computerSelection) {
+  gameHeader(gameRound);
   let playOutcome;
   playerScore = 0;
   computerScore = 0;
@@ -127,6 +128,12 @@ function playerPlay() {
   } else {
     return userResponse;
   }
+}
+
+// create a function that prints the current game round to the console
+function gameHeader(header) {
+  console.log(`Round ${header}`);
+  console.log("***************");
 }
 
 //call the game function to initialize the game
