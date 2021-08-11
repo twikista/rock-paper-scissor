@@ -2,6 +2,12 @@
 
 const options = ["rock", "paper", "scissors"];
 
+//create variables to hold total scores
+let playerTotalScore = 0;
+let computerTotalScore = 0;
+// create game round counter variable
+let gameRound = 1;
+
 //create a function that randomly generates the computer's selection
 
 function computerPlay() {
@@ -137,3 +143,4 @@ function gameHeader(header) {
 }
 
 //call the game function to initialize the game
+game();
