@@ -3,6 +3,9 @@
 const options = ["rock", "paper", "scissors"];
 
 //create variables to hold total scores
+let playerScore = 0;
+let computerScore = 0;
+let playOutcome;
 let playerTotalScore = 0;
 let computerTotalScore = 0;
 // create game round counter variable
@@ -20,83 +23,63 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
   gameHeader(gameRound);
-  let playOutcome;
-  playerScore = 0;
-  computerScore = 0;
   const playerSelectionlowerCase = playerSelection.toLowerCase();
-  const tie = playerSelectionlowerCase === computerSelection;
   console.log(`Player's selection: ${playerSelectionlowerCase}`);
   console.log(`Computer's selection: ${computerSelection}`);
 
-  //check if player selection is the same as computer's selection
-  if (tie) {
-    playOutcome = "Tie! play again";
-    console.log(playOutcome);
-    console.log("playerScore: 0");
-    console.log("computerScore: 0");
-  }
-  //check if the player or computer wins if player selection is rock
-  else if (playerSelectionlowerCase === "rock") {
-    if (computerSelection === "scissors") {
-      playOutcome = `You win! ${playerSelection} wins ${computerSelection}`;
-      console.log(playOutcome);
+  for (let i = 0; i < options.length; i++) {
+    if (playerSelectionlowerCase === computerSelection) {
+      //check if player selection is the same as computer selection
+      playOutcome = "Tie! play again";
       playerScore = 1;
       computerScore = 0;
-      console.log(`player score: ${playerScore}`);
-      console.log(`computer score: ${computerScore}`);
-      playerTotalScore += playerScore;
-      computerTotalScore += computerScore;
-    } else {
-      playOutcome = `You lose! ${computerSelection} win ${playerSelection} `;
-      console.log(playOutcome);
-      playerScore = 0;
-      computerScore = 1;
-      console.log(`player score: ${playerScore}`);
-      console.log(`computer score: ${computerScore}`);
-      playerTotalScore += playerScore;
-      computerTotalScore += computerScore;
-    }
-    //check if the player or computer wins if player selection is paper
-  } else if (playerSelectionlowerCase === "paper") {
-    if (computerSelection === "rock") {
+      displayRoundOutcome(playOutcome, playerScore, computerScore);
+      break;
+    } else if (
+      //check if the player wins if player selection is rock
+      playerSelectionlowerCase === options[0] &&
+      computerSelection === options[2]
+    ) {
       playOutcome = `You win! ${playerSelection} wins ${computerSelection}`;
-      console.log(playOutcome);
       playerScore = 1;
       computerScore = 0;
-      console.log(`player score: ${playerScore}`);
-      console.log(`computer score: ${computerScore}`);
+      displayRoundOutcome(playOutcome, playerScore, computerScore);
       playerTotalScore += playerScore;
       computerTotalScore += computerScore;
-    } else {
-      playOutcome = `You lose! ${computerSelection} win ${playerSelection} `;
-      console.log(playOutcome);
-      playerScore = 0;
-      computerScore = 1;
-      console.log(`player score: ${playerScore}`);
-      console.log(`computer score: ${computerScore}`);
-      playerTotalScore += playerScore;
-      computerTotalScore += computerScore;
-    }
-    //check if the player or computer wins if player selection is scissors
-  } else if (playerSelectionlowerCase === "scissors") {
-    if (computerSelection === "paper") {
+      break;
+    } else if (
+      //check if the player wins if player selection is paper
+      playerSelectionlowerCase === options[1] &&
+      computerSelection === options[0]
+    ) {
       playOutcome = `You win! ${playerSelection} wins ${computerSelection}`;
-      console.log(playOutcome);
       playerScore = 1;
       computerScore = 0;
-      console.log(`player score: ${playerScore}`);
-      console.log(`computer score: ${computerScore}`);
+      displayRoundOutcome(playOutcome, playerScore, computerScore);
       playerTotalScore += playerScore;
       computerTotalScore += computerScore;
+      break;
+    } else if (
+      //check if the player wins if player selection is scissors
+      playerSelectionlowerCase === options[2] &&
+      computerSelection === options[1]
+    ) {
+      playOutcome = `You win! ${playerSelection} wins ${computerSelection}`;
+      playerScore = 1;
+      computerScore = 0;
+      displayRoundOutcome(playOutcome, playerScore, computerScore);
+      playerTotalScore += playerScore;
+      computerTotalScore += computerScore;
+      break;
     } else {
-      playOutcome = `You lose! ${computerSelection} win ${playerSelection} `;
-      console.log(playOutcome);
+      //check if computer wins
+      playOutcome = `You loss! ${computerSelection} win ${playerSelection} `;
       playerScore = 0;
       computerScore = 1;
-      console.log(`player score: ${playerScore}`);
-      console.log(`computer score: ${computerScore}`);
+      displayRoundOutcome(playOutcome, playerScore, computerScore);
       playerTotalScore += playerScore;
       computerTotalScore += computerScore;
+      break;
     }
   }
 
@@ -107,7 +90,6 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // create a function that determines the number of game rounds and alert the winner to the browser window
-
 function game() {
   //loop through each round of the game
   let i = 1;
@@ -116,13 +98,7 @@ function game() {
     i++;
   }
   //alert winner of the game based on total scores
-  if (playerTotalScore > computerTotalScore) {
-    alert("Congratulations!!! You won the game");
-  } else if (playerTotalScore < computerTotalScore) {
-    alert("Oops! You lose the game");
-  } else {
-    alert("It's a Tie: No winner!");
-  }
+  alertGameWinner(playerTotalScore, computerTotalScore);
 }
 
 // create a function that prompt user for input
@@ -133,6 +109,34 @@ function playerPlay() {
     alert("please enter a valid option");
   } else {
     return userResponse;
+  }
+}
+
+//create function that displays outcome for each round
+function displayRoundOutcome(roundOutcome, roundScore1, roundScore2) {
+  if (roundScore1 === roundScore2) {
+    console.log(roundOutcome);
+    console.log(`playerScore: ${roundScore1}`);
+    console.log(`computerScore: ${roundScore2}`);
+  } else if (roundScore1 > roundScore2) {
+    console.log(roundOutcome);
+    console.log(`player score: ${roundScore1}`);
+    console.log(`computer score: ${roundScore2}`);
+  } else {
+    console.log(roundOutcome);
+    console.log(`player score: ${roundScore1}`);
+    console.log(`computer score: ${roundScore2}`);
+  }
+}
+
+//create a function that alert winner of the game based on total scores
+function alertGameWinner(totalScore1, totalScore2) {
+  if (totalScore1 > totalScore2) {
+    alert("Congratulations!!! You won the game");
+  } else if (totalScore1 < totalScore2) {
+    alert("Oops! You loss the game");
+  } else {
+    alert("It's a Tie: No winner!");
   }
 }
 
