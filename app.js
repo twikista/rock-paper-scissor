@@ -101,4 +101,21 @@ function playRound(playerSelection, computerSelection) {
 
 // create a function that determines the number of game rounds and alert the winner to the browser window
 
+function game() {
+  //loop through each round of the game
+  let i = 1;
+  while (i <= 5) {
+    playRound(playerPlay(), computerPlay());
+    i++;
+  }
+  //alert winner of the game based on total scores
+  if (playerTotalScore > computerTotalScore) {
+    alert("Congratulations!!! You won the game");
+  } else if (playerTotalScore < computerTotalScore) {
+    alert("Oops! You loss the game");
+  } else {
+    alert("It's a Tie: No winner!");
+  }
+}
+
 //call the game function to initialize the game
