@@ -47,7 +47,7 @@ function playRound(playerSelection, computerSelection) {
       playerTotalScore += playerScore;
       computerTotalScore += computerScore;
     } else {
-      playOutcome = `You loss! ${computerSelection} win ${playerSelection} `;
+      playOutcome = `You lose! ${computerSelection} win ${playerSelection} `;
       console.log(playOutcome);
       playerScore = 0;
       computerScore = 1;
@@ -68,7 +68,7 @@ function playRound(playerSelection, computerSelection) {
       playerTotalScore += playerScore;
       computerTotalScore += computerScore;
     } else {
-      playOutcome = `You loss! ${computerSelection} win ${playerSelection} `;
+      playOutcome = `You lose! ${computerSelection} win ${playerSelection} `;
       console.log(playOutcome);
       playerScore = 0;
       computerScore = 1;
@@ -89,7 +89,7 @@ function playRound(playerSelection, computerSelection) {
       playerTotalScore += playerScore;
       computerTotalScore += computerScore;
     } else {
-      playOutcome = `You loss! ${computerSelection} win ${playerSelection} `;
+      playOutcome = `You lose! ${computerSelection} win ${playerSelection} `;
       console.log(playOutcome);
       playerScore = 0;
       computerScore = 1;
@@ -119,7 +119,7 @@ function game() {
   if (playerTotalScore > computerTotalScore) {
     alert("Congratulations!!! You won the game");
   } else if (playerTotalScore < computerTotalScore) {
-    alert("Oops! You loss the game");
+    alert("Oops! You lose the game");
   } else {
     alert("It's a Tie: No winner!");
   }
@@ -138,6 +138,7 @@ function playerPlay() {
 
 // create a function that prints the current game round to the console
 function gameHeader(header) {
+  console.log("***************");
   console.log(`Round ${header}`);
   console.log("***************");
 }
