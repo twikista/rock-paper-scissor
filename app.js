@@ -118,4 +118,15 @@ function game() {
   }
 }
 
+// create a function that prompt user for input
+function playerPlay() {
+  let userResponse = prompt("Make a selection", "");
+  //validate user input
+  if (userResponse === "") {
+    alert("please enter a valid option");
+  } else {
+    return userResponse;
+  }
+}
+
 //call the game function to initialize the game
