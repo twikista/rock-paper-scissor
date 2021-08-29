@@ -10,11 +10,6 @@
 </head>
 <body>
     <div class="wrapper">
-        <!-- <header>
-            <div class="game-header">
-                <h2>Rock Paper Scissors</h2>
-            </div>
-        </header> -->
         <main>
             <div class="pages start-game-page" id="start-game-page">
                 <div class="header">
@@ -81,9 +76,79 @@
                         <div class="start-game-button">
                             <button data-target="#main-game-page" class="btn tab start-game-btn">Start Game</button>
                         </div>
+                   </div>
+                </div>
+            </div>
+            <div class="pages game-main-page-wrapper" id="main-game-page">
+                <div class="game-main-content">
 
+                    <div class="display-game-proceeding">
+                        <div class="round-winner">
+                            <p>who will win this round</p>
+                        </div>
+                        <div class="display-selections">
+
+                            <div class="selection-container user">
+                                <i class="far fa-user fa-4x"></i>
+                                <span class="selection-title">Player Selection</span>
+                                <div class="selection" id="player-selection">...</div>
+
+                            </div>
+                            <div class="selection-container">
+                                <span class="versus">
+                                    VS
+                                </span>
+                            </div>
+                            <div class="selection-container robot">
+                                <i class="fas fa-robot fa-3x"></i>
+                                <span class="selection-title">Computer Selection</span>
+                                <div class="selection" id="computer-selection">...
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="running-scores">
+                            <span class="running-score" id="player-running-score">0</span>
+                            <span class="running-score">:</span>
+                            <span class="running-score" id="computer-running-score">0
+                            </span>
+
+
+                        </div>
+                        <div class="play-buttons">
+                            <button class=" btn play-btn" id="rock">
+                                <i class="fas fa-hand-rock fa-2x" id="rock-icon"></i>Rock
+                            </button>
+                            <button class="btn play-btn" id="paper">
+                                <i class="fas fa-hand-paper fa-2x"></i>Paper
+                            </button>
+                            <button class="btn play-btn" id="scissors">
+                                <i class="fas fa-hand-scissors fa-2x"></i>Scissors
+                            </button>
+                        </div>
 
                     </div>
+                    <div class="display-game-winner">
+                        <div class="modal">
+                            <div class="game-status">
+                                <span class="display-game-status"></span>
+                            </div>
+                            <span class="game-winner"></span>
+                            <div class="game-summary">
+                                <span class="final-score">final Score</span>
+                                <span class="scores"></span>
+                            </div>
+                            <div class="modal-btns">
+                                <button class=" btn play-again-btn">Play Again</button>
+                                <button data-target="#end-game-page" class="btn tab end-game-btn">End Game</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
 
 
 
