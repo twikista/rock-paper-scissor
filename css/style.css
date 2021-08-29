@@ -138,3 +138,38 @@
     outline-offset: 3px;
   }
   
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: ;
+    height: 300px;
+    padding: 100px 0 40px 0;
+    font-size: 1.5rem;
+  }
+  
+  .game-main-page-wrapper {
+    display: none;
+    background-color: #0f0e17;
+    min-height: 100vh;
+    color: #a7aabe;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .game-main-content{
+    border: solid #a7aabe 2px;
+    padding-bottom: 2rem;
+    border-radius: 15px;
+  }
+  
+  .round-winner {
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0 1rem 0;
+    background-color: #a7aabe;
+    color: #0f0e17;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
