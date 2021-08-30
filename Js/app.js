@@ -35,8 +35,26 @@ let computerScore = 0;
 let playOutcome;
 let playerTotalScore = 0;
 let computerTotalScore = 0;
-// create game round counter variable
-let gameRound = 1;
+
+//link the various game sections
+pagesBtns.forEach((pageBtn) => {
+  pageBtn.addEventListener("click", function (e) {
+    if (e.target.classList.contains("tab")) {
+      const activePage = document.querySelector(e.target.dataset.target);
+      pages.forEach((page) => {
+        if (page === activePage) {
+          page.style.display = "flex";
+        } else {
+          page.style.display = "none";
+        }
+      });
+
+      console.log(activePage);
+    }
+  });
+});
+
+//add event listener to the play game buttons
 
 //create a function that randomly generates the computer's selection
 
