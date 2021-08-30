@@ -81,71 +81,82 @@ function computerPlay() {
 //create a function that determines the winner of each game round depending on player selection and computer selection
 
 function playRound(playerSelection, computerSelection) {
-  gameHeader(gameRound);
   const playerSelectionlowerCase = playerSelection.toLowerCase();
-  console.log(`Player's selection: ${playerSelectionlowerCase}`);
-  console.log(`Computer's selection: ${computerSelection}`);
+  playerPick.textContent = `${playerSelection}`;
+  computerPick.textContent = `${computerSelection}`;
 
   for (let i = 0; i < options.length; i++) {
-    if (playerSelectionlowerCase === computerSelection) {
+    if (playerSelection === computerSelection) {
       //check if player selection is the same as computer selection
       playOutcome = "Tie! play again";
-      playerScore = 1;
+      playerScore = 0;
       computerScore = 0;
-      displayRoundOutcome(playOutcome, playerScore, computerScore);
+      displayRoundWinner(playOutcome);
+      gameRound--;
+      tieRound.currentTime = 0;
+      tieRound.play();
       break;
     } else if (
       //check if the player wins if player selection is rock
-      playerSelectionlowerCase === options[0] &&
+      playerSelection === options[0] &&
       computerSelection === options[2]
     ) {
       playOutcome = `You win! ${playerSelection} wins ${computerSelection}`;
       playerScore = 1;
       computerScore = 0;
-      displayRoundOutcome(playOutcome, playerScore, computerScore);
+      displayRoundWinner(playOutcome);
       playerTotalScore += playerScore;
       computerTotalScore += computerScore;
+      winEffects();
       break;
     } else if (
       //check if the player wins if player selection is paper
-      playerSelectionlowerCase === options[1] &&
+      playerSelection === options[1] &&
       computerSelection === options[0]
     ) {
       playOutcome = `You win! ${playerSelection} wins ${computerSelection}`;
       playerScore = 1;
       computerScore = 0;
-      displayRoundOutcome(playOutcome, playerScore, computerScore);
+      displayRoundWinner(playOutcome);
       playerTotalScore += playerScore;
       computerTotalScore += computerScore;
+      winEffects();
+
       break;
     } else if (
       //check if the player wins if player selection is scissors
-      playerSelectionlowerCase === options[2] &&
+      playerSelection === options[2] &&
       computerSelection === options[1]
     ) {
       playOutcome = `You win! ${playerSelection} wins ${computerSelection}`;
       playerScore = 1;
       computerScore = 0;
-      displayRoundOutcome(playOutcome, playerScore, computerScore);
+      displayRoundWinner(playOutcome);
       playerTotalScore += playerScore;
       computerTotalScore += computerScore;
+      winEffects();
+
       break;
     } else {
       //check if computer wins
       playOutcome = `You loss! ${computerSelection} win ${playerSelection} `;
       playerScore = 0;
       computerScore = 1;
-      displayRoundOutcome(playOutcome, playerScore, computerScore);
+      displayRoundWinner(playOutcome);
       playerTotalScore += playerScore;
       computerTotalScore += computerScore;
+      loseEffects();
+
       break;
     }
   }
 
   gameRound++;
 
-  console.log(`Player Total score: ${playerTotalScore}`);
-  console.log(`Computer Total score: ${computerTotalScore}`);
+  totalScore(playerTotalScore, computerTotalScore);
+  alertGameWinner(playerTotalScore, computerTotalScore);
+
+  popWinner(playerTotalScore, computerTotalScore);
 }
 
 // create a function that determines the number of game rounds and alert the winner to the browser window
