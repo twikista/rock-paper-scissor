@@ -90,16 +90,6 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // create a function that determines the number of game rounds and alert the winner to the browser window
-function game() {
-  //loop through each round of the game
-  let i = 1;
-  while (i <= 5) {
-    playRound(playerPlay(), computerPlay());
-    i++;
-  }
-  //alert winner of the game based on total scores
-  alertGameWinner(playerTotalScore, computerTotalScore);
-}
 
 // create a function that prompt user for input
 function playerPlay() {
@@ -139,13 +129,3 @@ function alertGameWinner(totalScore1, totalScore2) {
     alert("It's a Tie: No winner!");
   }
 }
-
-// create a function that prints the current game round to the console
-function gameHeader(header) {
-  console.log("***************");
-  console.log(`Round ${header}`);
-  console.log("***************");
-}
-
-//call the game function to initialize the game
-game();
