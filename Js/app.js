@@ -153,7 +153,7 @@ function playRound(playerSelection, computerSelection) {
 
   gameRound++;
 
-  totalScore(playerTotalScore, computerTotalScore);
+  runningScore(playerTotalScore, computerTotalScore);
   alertGameWinner(playerTotalScore, computerTotalScore);
 
   popWinner(playerTotalScore, computerTotalScore);
@@ -161,41 +161,41 @@ function playRound(playerSelection, computerSelection) {
 
 // create a function that determines the number of game rounds and alert the winner to the browser window
 
-// create a function that prompt user for input
-function playerPlay() {
-  let userResponse = prompt("Make a selection", "");
-  //validate user input
-  if (userResponse === "") {
-    alert("please enter a valid option");
-  } else {
-    return userResponse;
-  }
+// create a function that update and output game scoress
+function runningScore(runningScore1, runningScore2) {
+  playerRunningScore.textContent = `${runningScore1}`;
+  computerRunningScore.textContent = `${runningScore2}`;
 }
 
 //create function that displays outcome for each round
-function displayRoundOutcome(roundOutcome, roundScore1, roundScore2) {
-  if (roundScore1 === roundScore2) {
-    console.log(roundOutcome);
-    console.log(`playerScore: ${roundScore1}`);
-    console.log(`computerScore: ${roundScore2}`);
-  } else if (roundScore1 > roundScore2) {
-    console.log(roundOutcome);
-    console.log(`player score: ${roundScore1}`);
-    console.log(`computer score: ${roundScore2}`);
+function displayRoundWinner(roundOutcome, plyerRoundScore, computerRoundScore) {
+  if (plyerRoundScore === computerRoundScore) {
+    roundWinner.firstElementChild.textContent = roundOutcome;
+  } else if (plyerRoundScore > computerRoundScore) {
+    roundWinner.firstElementChild.textContent = roundOutcome;
   } else {
-    console.log(roundOutcome);
-    console.log(`player score: ${roundScore1}`);
-    console.log(`computer score: ${roundScore2}`);
+    roundWinner.firstElementChild.textContent = roundOutcome;
   }
 }
 
 //create a function that alert winner of the game based on total scores
 function alertGameWinner(totalScore1, totalScore2) {
-  if (totalScore1 > totalScore2) {
-    alert("Congratulations!!! You won the game");
-  } else if (totalScore1 < totalScore2) {
-    alert("Oops! You loss the game");
-  } else {
-    alert("It's a Tie: No winner!");
+  const finalScore = document.querySelector(".scores");
+  const displayFinalOutcome = document.querySelector(".display-game-status");
+
+  finalScore.textContent = `Player ${playerTotalScore} : ${computerTotalScore} Computer`;
+
+  if (totalScore1 === 5 && totalScore1 > totalScore2) {
+    displayFinalOutcome.textContent = "WINNER!!!";
+    displayFinalOutcome.classList.add("game-status-win");
+    finalScore.previousElementSibling.classList.add("game-status-win");
+    gameWinner.textContent = "Congratulations!!! You won the game";
+    winGame.play();
+  } else if (totalScore2 === 5 && totalScore1 < totalScore2) {
+    displayFinalOutcome.textContent = "GAME OVER";
+    displayFinalOutcome.classList.add("game-status-lose");
+    gameWinner.textContent = "Oops! You loss the game";
+
+    GameOverSound.play();
   }
 }
