@@ -178,7 +178,6 @@
 .display-selections {
     display: flex;
     justify-content: space-between;
-    /* background-color: #1a1a1a; */
     border-radius: 15px;
     padding: 1rem 2rem 1rem 2rem;
     color: #a7aabe;
@@ -191,14 +190,10 @@
     align-items: center;
     padding: 1rem;
     
-  }
-  
-  
+  } 
   
   .selection-container:not(:nth-child(2)) {
-    /* border: 1px solid #999; */
     border-radius: 15px;
-    /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.7), 0 -2px 5px rgba(255, 255, 255, 0.7) ; */
     border: #a7aabe solid 1px;
     transition: 0.3s ease-in;
   }
@@ -208,8 +203,7 @@
     font-size: 2rem;
     color: #a7aabe;
   }
-  
-  
+
   .selection-container .fa-user, .selection-container .fa-robot {
     color: #a7aabe;
     transition: 0.3s ease-in;
@@ -246,6 +240,122 @@
   
   .win-round {
     transform: scale(1.03);
-    color: greenyellow;
+    color: #9acd32;
   }
+
+  .display-game-winner {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    min-height: 100vh;
+    transition: all 1s ease-in;
+  }
+  
+  .active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .display-game-winner .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(26, 26, 26, 0.877);
+    color: #a7aabe;
+    border: 2px solid #a7aabe;
+    position: relative;
+    height: 90%;
+    width: 75%;
+    border-radius: 0.9rem;
+  }
+  
+  .game-status {
+    padding: 1.5rem 1rem 3rem 1rem; 
+  }
+  
+  .display-game-status {
+    font-family: 'Press Start 2P', cursive;
+    color: #f54747;
+    font-size: 2rem;
+    font-weight: 400;
+    text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.8);
+    padding: 2rem 1rem 2rem 1rem;
+    border: dotted 3px #f54747;
+  }
+  
+  .game-status-win {
+    color: #9acd32;
+    border-color: #9acd32;
+  }
+  
+  .display-game-winner .modal .game-winner {
+    display: block;
+    font-size: 2rem;
+    color: #a7aabe;
+    padding: 2rem 0 1rem 0;
+  }
+  
+  .game-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .game-summary .final-score {
+    display: block;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    word-spacing: 5px;
+    color: #fa8072;
+    border-bottom: 2px #fa8072 solid;
+  }
+  
+  .game-summary .scores {
+    display: block;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: #a7aabe;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+  }
+  
+  .modal-btns {
+    display: flex;
+    margin-top: 3rem;
+  }
+  
+  .modal-btns .btn {
+    display: inline-block;
+    background-color: transparent;
+    border: solid 2px salmon;
+    outline: none;
+    padding: 1.5rem 3rem 1.5rem 3rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    color: salmon;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .modal-btns .btn:not(first-child) {
+    margin-left: 2rem;
+  }
+  
+  .modal-btns .btn:hover {
+    color: #f4f4f4;
+    background-color: salmon;
+  }
+  
+  
   
