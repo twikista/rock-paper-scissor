@@ -237,6 +237,47 @@
   .running-scores .player-running-score{
     display: inline-block;
   }
+
+
+  .play-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .play-buttons .btn {
+    display: inline-block;
+    background-color: transparent;
+    outline: none;
+    padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 500;
+    color: salmon;
+    min-width: 150px;
+    border: 2px solid salmon;
+    margin-top: 1rem;
+    transition: 0.2s ease-in;
+    border-radius: 10px;
+  }
+  
+  .play-buttons .btn:not(:first-child) {
+    margin-left: 0.63rem;
+  }
+  
+  .play-buttons .btn:hover {
+    transform: scale(1.02);
+    box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5),
+      -1px -1px 3px rgba(255, 255, 255, 0.5);
+  }
+  
+  .play-buttons i {
+    display: block;
+    color: #fa8072;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  
   
   .win-round {
     transform: scale(1.03);
