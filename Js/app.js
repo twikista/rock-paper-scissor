@@ -55,6 +55,20 @@ pagesBtns.forEach((pageBtn) => {
 });
 
 //add event listener to the play game buttons
+rockBtn.addEventListener("click", (e) => {
+  let playerPlay = "rock";
+  playRound(playerPlay, computerPlay());
+});
+
+paperBtn.addEventListener("click", (e) => {
+  let playerPlay = "paper";
+  playRound(playerPlay, computerPlay());
+});
+
+scissorsBtn.addEventListener("click", (e) => {
+  let playerPlay = "scissors";
+  playRound(playerPlay, computerPlay());
+});
 
 //create a function that randomly generates the computer's selection
 
