@@ -92,7 +92,6 @@ function playRound(playerSelection, computerSelection) {
       playerScore = 0;
       computerScore = 0;
       displayRoundWinner(playOutcome);
-      gameRound--;
       tieRound.currentTime = 0;
       tieRound.play();
       break;
@@ -151,8 +150,6 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-  gameRound++;
-
   runningScore(playerTotalScore, computerTotalScore);
   alertGameWinner(playerTotalScore, computerTotalScore);
 
@@ -198,4 +195,72 @@ function alertGameWinner(totalScore1, totalScore2) {
 
     GameOverSound.play();
   }
+}
+
+function popWinner(totalScore1, totalScore2) {
+  if (totalScore1 === 5 || totalScore2 === 5) {
+    setTimeout(() => displayGameWinner.classList.add("active"), 500);
+  }
+}
+
+function winEffects() {
+  const playerAvatar = document.querySelector(".selection-container .fa-user");
+  const playerWinIndicator = document.querySelector(".user");
+  const playerSelection = document.querySelector(
+    ".selection-container #player-selection"
+  );
+
+  playerAvatar.style.cssText = "color:#9acd32; transform:scale(1.1);";
+  playerSelection.style.cssText = "color:#9acd32; transform:scale(1.1);";
+  playerRunningScore.style.cssText = "color:#9acd32;";
+  playerWinIndicator.classList.add("win-effect");
+
+  setTimeout(() => {
+    playerAvatar.style.cssText = "color:#a7aabe; transform:scale(1);";
+    playerSelection.style.cssText = "color:#a7aabe; transform:scale(1);";
+    playerRunningScore.style.cssText = "color:#a7aabe;";
+    playerWinIndicator.classList.remove("win-effect");
+  }, 500);
+  winRound.currentTime = 0;
+  winRound.play();
+}
+
+function loseEffects() {
+  const computerWinIndicator = document.querySelector(".robot");
+  const computerAvatar = document.querySelector(
+    ".selection-container .fa-robot"
+  );
+  const computerSelection = document.querySelector(
+    ".selection-container #computer-selection"
+  );
+  computerAvatar.style.cssText = "color:#f54747; transform:scale(1.1)";
+  computerSelection.style.cssText = "color:#f54747; transform:scale(1.1)";
+  computerRunningScore.style.cssText = "color:#f54747;";
+  computerWinIndicator.classList.add("win-effect");
+  setTimeout(() => {
+    computerAvatar.style.cssText = "color:#a7aabe; transform:scale(1)";
+    computerAvatar.style.cssText = "color:#a7aabe";
+    computerSelection.style.cssText = "color:#a7aabe; transform:scale(1)";
+    computerRunningScore.style.cssText = "color:#a7aabe;";
+    computerWinIndicator.classList.remove("win-effect");
+  }, 500);
+  lossRoundTwo.currentTime = 0;
+  lossRoundTwo.play();
+}
+
+replayGameBtn.addEventListener("click", playAgain);
+
+function playAgain() {
+  playerScore = 0;
+  computerScore = 0;
+  playOutcome;
+  playerTotalScore = 0;
+  computerTotalScore = 0;
+  playerPick.textContent = "...";
+  computerPick.textContent = "...";
+  roundWinner.firstElementChild.textContent = "who will win this round";
+  playerRunningScore.textContent = `0`;
+  computerRunningScore.textContent = `0`;
+  gameRound = 1;
+  displayGameWinner.classList.remove("active");
 }

@@ -30,7 +30,7 @@
   }
   
   .hero-text {
-    font-family: 'Rye', cursive;
+    font-family: 'ZCOOL KuaiLe', cursive;
     display: flex;
     list-style: none;
     padding:2rem 1rem 1rem 1rem ;
@@ -38,6 +38,7 @@
     align-items: center;
     font-size: 3rem;
     margin: 0;
+    text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.8);
   }
   
   .hero-text li {
@@ -81,6 +82,7 @@
   }
   
   .how-it-works .main {
+    font-family: 'Kelly Slab', cursive;
     text-align: left;
   }
   
@@ -163,6 +165,7 @@
   }
   
   .round-winner {
+    font-family: 'Saira Stencil One', cursive;
     text-align: center;
     font-weight: 900;
     font-size: 1.5rem;
@@ -176,6 +179,7 @@
 
 
 .display-selections {
+  
     display: flex;
     justify-content: space-between;
     border-radius: 15px;
@@ -202,6 +206,8 @@
     margin: 0 1rem;
     font-size: 2rem;
     color: #a7aabe;
+    font-family: 'Kelly Slab', cursive;
+    font-weight: 800;
   }
 
   .selection-container .fa-user, .selection-container .fa-robot {
@@ -215,6 +221,7 @@
   }
   
   .selection-container .selection-title {
+    font-family: 'Kelly Slab', cursive;
     color: #b3b3b3;
     transition: 0.05s ease-in;
     border-bottom: 1px solid #999;
@@ -222,12 +229,14 @@
   }
   
   .selection-container .selection {
+    font-family: 'ZCOOL KuaiLe', cursive;
     padding: 0.5rem 0 2rem 0;
     font-size: 1.2rem;
     text-transform: uppercase;
   }
   
   .running-scores {
+    font-family: 'Kelly Slab', cursive;
     text-align: center;
     padding: 1.5rem 0 1.5rem 0;
     margin-bottom: 3rem;
@@ -246,6 +255,7 @@
   }
 
   .play-buttons .btn {
+    font-family: 'ZCOOL KuaiLe', cursive;
     display: inline-block;
     background-color: transparent;
     outline: none;
@@ -350,8 +360,13 @@
     justify-content: center;
     align-items: center;
   }
+
+  .game-winner{
+    font-family: 'Rye', cursive;
+  }
   
   .game-summary .final-score {
+    font-family: 'Kelly Slab', cursive;
     display: block;
     font-size: 1.8rem;
     text-transform: uppercase;
@@ -362,6 +377,7 @@
   }
   
   .game-summary .scores {
+    font-family: 'Kelly Slab', cursive;
     display: block;
     font-size: 1.8rem;
     letter-spacing: 2px;
@@ -371,18 +387,20 @@
   }
   
   .modal-btns {
+    
     display: flex;
     margin-top: 3rem;
   }
   
   .modal-btns .btn {
+    font-family: 'Kelly Slab', cursive;
     display: inline-block;
     background-color: transparent;
     border: solid 2px salmon;
     outline: none;
     padding: 1.5rem 3rem 1.5rem 3rem;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: salmon;
     border-radius: 5px;
@@ -394,8 +412,8 @@
   }
   
   .modal-btns .btn:hover {
-    color: #f4f4f4;
-    background-color: salmon;
+    color: #a7aabe;
+    border-color: #a7aabe;
   }
 
   .end-game-page {
@@ -405,11 +423,12 @@
     align-items: center;
     min-height: 100vh;
     background-color: #0f0e17;
-    color: salmon;
+    color: #a7aabe;
     font-size: 1.5rem;
   }
   
   .end-game-wrapper {
+    font-family: 'Kelly Slab', cursive;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -440,7 +459,7 @@
   
   .socials span {
     display: inline-block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-size: 1.2rem;
     text-align: center;
   }
@@ -455,11 +474,23 @@
   .socials a {
     text-decoration: none;
     color: #a7aabe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    
+   
+    
   }
-  
+
   .socials a:hover {
-    color: salmon;
+    color: #fa8072;
+    border: solid #fa8072 2px; 
   }
+
   
   .socials li:not(:first-child) {
     margin-left: 2rem;
