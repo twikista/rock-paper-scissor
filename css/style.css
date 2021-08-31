@@ -165,7 +165,7 @@
   }
   
   .round-winner {
-    font-family: 'Saira Stencil One', cursive;
+    font-family: 'ZCOOL KuaiLe', cursive;
     text-align: center;
     font-weight: 900;
     font-size: 1.5rem;
@@ -175,6 +175,7 @@
     color: #0f0e17;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    letter-spacing: 2px;
   }
 
 
