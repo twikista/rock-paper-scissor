@@ -16,6 +16,7 @@ This project was built as a task in the Odin Project web development foundation 
 ## Technology Used
 
 - HTML
+- CSS
 - JavaScript
 
 ## Skill Tested
@@ -25,9 +26,5 @@ This project was built as a task in the Odin Project web development foundation 
 - Functions
 - Scope
 - Logic
-
-## Build Status
-
-This version of the game can only be played in the browser console.
-
-A future version of the project with a Graphic user Interface will be built as part of a future task in the Odin web development curriculum.
+- DOM manipulation
+- page layout and positioning
