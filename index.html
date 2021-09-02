@@ -16,11 +16,11 @@
 <body>
     <div class="wrapper">
         <main>
-            <div class="pages start-game-page" id="start-game-page">
-                <div class="header">
+            <div class="pages start-game-page flex-column" id="start-game-page">
+                <div class="header flex-column">
                     <div class="header-wrap">
                         <div class="hero">
-                            <ul class="hero-text">
+                            <ul class="hero-text flex-row">
                                 <li>
                                     <span class="text">Rock</span>
                                 </li>
@@ -42,7 +42,7 @@
                             GAME
                         </div>
                         <div class="how-it-works">
-                            <div class="head">
+                            <div class="head flex-row">
                                 <h3>Game Instruction</h3>
                             </div>
                             <div class="main">
@@ -78,7 +78,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="start-game-button">
+                        <div class="start-game-button flex-row">
                             <button data-target="#main-game-page" class="btn tab start-game-btn">Start Game</button>
                         </div>
                    </div>
@@ -93,7 +93,7 @@
                         </div>
                         <div class="display-selections">
 
-                            <div class="selection-container user">
+                            <div class="selection-container flex-column user">
                                 <i class="far fa-user fa-4x"></i>
                                 <span class="selection-title">Player Selection</span>
                                 <div class="selection" id="player-selection">...</div>
@@ -104,7 +104,7 @@
                                     VS
                                 </span>
                             </div>
-                            <div class="selection-container robot">
+                            <div class="selection-container robot flex-column">
                                 <i class="fas fa-robot fa-3x"></i>
                                 <span class="selection-title">Computer Selection</span>
                                 <div class="selection" id="computer-selection">...
@@ -118,7 +118,7 @@
                             <span class="running-score" id="computer-running-score">0
                             </span>
                         </div>
-                        <div class="play-buttons">
+                        <div class="play-buttons flex-row">
                             <button class=" btn play-btn" id="rock">
                                 <i class="fas fa-hand-rock fa-2x" id="rock-icon"></i>Rock
                             </button>
@@ -137,7 +137,7 @@
                                 <span class="display-game-status"></span>
                             </div>
                             <span class="game-winner"></span>
-                            <div class="game-summary">
+                            <div class="game-summary flex-column">
                                 <span class="final-score">final Score</span>
                                 <span class="scores"></span>
                             </div>
@@ -154,10 +154,10 @@
             </div>
             <div class="pages end-game-page" id="end-game-page">
                 <div class="end-game-wrapper">
-                    <div class="end-game-content">
+                    <div class="end-game-content flex-row">
                         Thank you for checking out our Game
                     </div>
-                    <div class="socials">
+                    <div class="socials flex-column">
                         <span>love to connect with you</span>
                         <ul>
                             <li>

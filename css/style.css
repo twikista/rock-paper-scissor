@@ -4,20 +4,25 @@
     margin: 0;
   }
 
-  .start-game-page {
+  .flex-column{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+  }
+
+  .flex-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .start-game-page {
     background-color: #0f0e17;
     min-height: 100vh;
     color: #a7aabe;
   }
   .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 3rem 0 3rem 0;
     
     
@@ -31,11 +36,8 @@
   
   .hero-text {
     font-family: 'ZCOOL KuaiLe', cursive;
-    display: flex;
     list-style: none;
     padding:2rem 1rem 1rem 1rem ;
-    justify-content: center;
-    align-items: center;
     font-size: 3rem;
     margin: 0;
     text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.8);
@@ -45,6 +47,7 @@
     margin-left: 1rem;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   
   .hero-text li .bullet {
@@ -71,9 +74,6 @@
   }
   
   .how-it-works .head {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     padding: 0.7rem 0 0.2rem 0;
     font-family: 'Kelly Slab', cursive;
     font-size: 1.5rem;
@@ -114,8 +114,6 @@
   }
 
   .start-game-button {
-    display: flex;
-    justify-content: center;
     margin-bottom: 3rem;
   }
   
@@ -140,14 +138,6 @@
     outline-offset: 3px;
   }
   
-  .main-content {
-    display: flex;
-    justify-content: center;
-    align-items: ;
-    height: 300px;
-    padding: 100px 0 40px 0;
-    font-size: 1.5rem;
-  }
   
   .game-main-page-wrapper {
     display: none;
@@ -189,10 +179,6 @@
   }
   
   .selection-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 1rem;
     
   } 
@@ -246,13 +232,6 @@
   
   .running-scores .player-running-score{
     display: inline-block;
-  }
-
-
-  .play-buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .play-buttons .btn {
@@ -330,6 +309,7 @@
   }
   
   .game-status {
+    
     padding: 1.5rem 1rem 3rem 1rem; 
   }
   
@@ -341,6 +321,7 @@
     text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.8);
     padding: 2rem 1rem 2rem 1rem;
     border: dotted 3px #f54747;
+    
   }
   
   .game-status-win {
@@ -353,13 +334,7 @@
     font-size: 2rem;
     color: #a7aabe;
     padding: 2rem 0 1rem 0;
-  }
-  
-  .game-summary {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
   }
 
   .game-winner{
@@ -388,7 +363,6 @@
   }
   
   .modal-btns {
-    
     display: flex;
     margin-top: 3rem;
   }
@@ -443,8 +417,6 @@
   
   .end-game-content {
     flex: 2 1;
-    display: flex;
-    align-items: center;
     font-size: 2rem;
     padding-top: 3rem;
     text-align: center;
@@ -452,10 +424,6 @@
   
   .socials {
     flex: 1 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
   
   .socials span {
@@ -481,10 +449,7 @@
     padding: 1.2rem;
     height: 32px;
     width: 32px;
-    border-radius: 50%;
-    
-   
-    
+    border-radius: 50%; 
   }
 
   .socials a:hover {
@@ -492,7 +457,6 @@
     border: solid #fa8072 2px; 
   }
 
-  
   .socials li:not(:first-child) {
     margin-left: 2rem;
   }
