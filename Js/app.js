@@ -100,7 +100,7 @@ function playRound(playerSelection, computerSelection) {
       playerSelection === options[0] &&
       computerSelection === options[2]
     ) {
-      playOutcome = `You win! ${playerSelection} wins ${computerSelection}`;
+      playOutcome = `You win! ${playerSelection} beats ${computerSelection}`;
       playerScore = 1;
       computerScore = 0;
       displayRoundWinner(playOutcome);
@@ -113,7 +113,7 @@ function playRound(playerSelection, computerSelection) {
       playerSelection === options[1] &&
       computerSelection === options[0]
     ) {
-      playOutcome = `You win! ${playerSelection} wins ${computerSelection}`;
+      playOutcome = `You win! ${playerSelection} beats ${computerSelection}`;
       playerScore = 1;
       computerScore = 0;
       displayRoundWinner(playOutcome);
@@ -127,7 +127,7 @@ function playRound(playerSelection, computerSelection) {
       playerSelection === options[2] &&
       computerSelection === options[1]
     ) {
-      playOutcome = `You win! ${playerSelection} wins ${computerSelection}`;
+      playOutcome = `You win! ${playerSelection} beats ${computerSelection}`;
       playerScore = 1;
       computerScore = 0;
       displayRoundWinner(playOutcome);
@@ -138,7 +138,7 @@ function playRound(playerSelection, computerSelection) {
       break;
     } else {
       //check if computer wins
-      playOutcome = `You loss! ${computerSelection} win ${playerSelection} `;
+      playOutcome = `You loss! ${computerSelection} beats ${playerSelection} `;
       playerScore = 0;
       computerScore = 1;
       displayRoundWinner(playOutcome);
