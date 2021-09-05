@@ -54,20 +54,23 @@ pagesBtns.forEach((pageBtn) => {
   });
 });
 
-//add event listener to the play game buttons
-rockBtn.addEventListener("click", (e) => {
-  let playerPlay = "rock";
-  playRound(playerPlay, computerPlay());
-});
-
-paperBtn.addEventListener("click", (e) => {
-  let playerPlay = "paper";
-  playRound(playerPlay, computerPlay());
-});
-
-scissorsBtn.addEventListener("click", (e) => {
-  let playerPlay = "scissors";
-  playRound(playerPlay, computerPlay());
+//add event listener to play buttons
+playBtns.addEventListener("click", (e) => {
+  const target = e.target.closest("button");
+  switch (target.id) {
+    case "rock":
+      playerPlay = target.textContent.toLowerCase().trim();
+      playRound(playerPlay, computerPlay());
+      break;
+    case "paper":
+      playerPlay = target.textContent.toLowerCase().trim();
+      playRound(playerPlay, computerPlay());
+      break;
+    case "scissors":
+      playerPlay = target.textContent.toLowerCase().trim();
+      playRound(playerPlay, computerPlay());
+      break;
+  }
 });
 
 //create a function that randomly generates the computer's selection
