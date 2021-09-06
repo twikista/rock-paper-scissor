@@ -28,3 +28,7 @@ This project was built as a task in the Odin Project web development foundation 
 - Logic
 - DOM manipulation
 - page layout and positioning
+
+## Game URL
+
+https://twikista.github.io/rock-paper-scissor/
