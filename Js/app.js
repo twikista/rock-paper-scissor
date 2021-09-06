@@ -6,15 +6,11 @@ const options = ["rock", "paper", "scissors"];
 const pagesBtns = document.querySelectorAll("[data-target]");
 const pages = document.querySelectorAll(".pages");
 
-//grab the play game buttons from HTML
-const rockBtn = document.querySelector("#rock");
-const paperBtn = document.querySelector("#paper");
-const scissorsBtn = document.querySelector("#scissors");
-
 //grab various HTML elements that make up game funtionality
 const playBtns = document.querySelector(".play-buttons");
 const playerPick = document.querySelector("#player-selection");
 const computerPick = document.querySelector("#computer-selection");
+
 const roundWinner = document.querySelector(".round-winner");
 const playerRunningScore = document.querySelector("#player-running-score");
 const computerRunningScore = document.querySelector("#computer-running-score");
@@ -23,11 +19,6 @@ const gameWinner = document.querySelector(".game-winner");
 const replayGameBtn = document.querySelector(".play-again-btn");
 
 //grab game audios
-const winGame = document.querySelector(".win-game");
-const winRound = document.querySelector(".win-round");
-const GameOverSound = document.querySelector(".game-over-sound");
-const lossRoundTwo = document.querySelector(".lose-round");
-const tieRound = document.querySelector(".tie-round");
 
 //create variables to hold total scores
 let playerScore = 0;
@@ -48,8 +39,6 @@ pagesBtns.forEach((pageBtn) => {
           page.style.display = "none";
         }
       });
-
-      console.log(activePage);
     }
   });
 });
@@ -84,7 +73,6 @@ function computerPlay() {
 //create a function that determines the winner of each game round depending on player selection and computer selection
 
 function playRound(playerSelection, computerSelection) {
-  const playerSelectionlowerCase = playerSelection.toLowerCase();
   playerPick.textContent = `${playerSelection}`;
   computerPick.textContent = `${computerSelection}`;
 
@@ -95,8 +83,7 @@ function playRound(playerSelection, computerSelection) {
       playerScore = 0;
       computerScore = 0;
       displayRoundWinner(playOutcome);
-      tieRound.currentTime = 0;
-      tieRound.play();
+      tieEffects();
       break;
     } else if (
       //check if the player wins if player selection is rock
@@ -182,6 +169,8 @@ function displayRoundWinner(roundOutcome, plyerRoundScore, computerRoundScore) {
 function alertGameWinner(totalScore1, totalScore2) {
   const finalScore = document.querySelector(".scores");
   const displayFinalOutcome = document.querySelector(".display-game-status");
+  const winGame = document.querySelector(".win-game");
+  const GameOverSound = document.querySelector(".game-over-sound");
 
   finalScore.textContent = `Player ${playerTotalScore} : ${computerTotalScore} Computer`;
 
@@ -212,6 +201,7 @@ function winEffects() {
   const playerSelection = document.querySelector(
     ".selection-container #player-selection"
   );
+  const winRound = document.querySelector(".win-round");
 
   playerAvatar.style.cssText = "color:#9acd32; transform:scale(1.1);";
   playerSelection.style.cssText = "color:#9acd32; transform:scale(1.1);";
@@ -236,6 +226,8 @@ function loseEffects() {
   const computerSelection = document.querySelector(
     ".selection-container #computer-selection"
   );
+  const lossRound = document.querySelector(".lose-round");
+
   computerAvatar.style.cssText = "color:#f54747; transform:scale(1.1)";
   computerSelection.style.cssText = "color:#f54747; transform:scale(1.1)";
   computerRunningScore.style.cssText = "color:#f54747;";
@@ -247,8 +239,14 @@ function loseEffects() {
     computerRunningScore.style.cssText = "color:#a7aabe;";
     computerWinIndicator.classList.remove("win-effect");
   }, 500);
-  lossRoundTwo.currentTime = 0;
-  lossRoundTwo.play();
+  lossRound.currentTime = 0;
+  lossRound.play();
+}
+
+function tieEffects() {
+  const tieRound = document.querySelector(".tie-round");
+  tieRound.currentTime = 0;
+  tieRound.play();
 }
 
 replayGameBtn.addEventListener("click", playAgain);
